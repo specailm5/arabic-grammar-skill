@@ -1,24 +1,18 @@
 # مهارة النحو والإعراب
 ### (Arabic Grammar & I'rab Skill)
 
+<p align="center">
+  <a href="https://github.com/specailm5/arabic-grammar-skill/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/github/license/specailm5/arabic-grammar-skill?style=flat-square"></a>
+  <a href="https://github.com/specailm5/arabic-grammar-skill/commits/master"><img alt="Last commit" src="https://img.shields.io/github/last-commit/specailm5/arabic-grammar-skill?style=flat-square"></a>
+  <a href="https://specailm5.github.io/arabic-grammar-skill/"><img alt="Docs" src="https://img.shields.io/badge/docs-live-brightgreen?style=flat-square"></a>
+  <img alt="Agent Skills" src="https://img.shields.io/badge/Agent%20Skills-compatible-5B21B6?style=flat-square">
+</p>
+
 **Arabic grammar skill for AI agents** — corrects Arabic grammar, explains the rule, parses the sentence, and produces a clear إعراب table: `إنّ الطالبُ` ← `إنّ الطالبَ`, `أكرمتُ المجتهداتَ` ← `أكرمتُ المجتهداتِ`. Works with Claude Code, Codex, Antigravity and VS Code agent harnesses.
 
 🔗 **الموقع المرجعي (النحو والصرف والإعراب والنماذج): [specailm5.github.io/arabic-grammar-skill](https://specailm5.github.io/arabic-grammar-skill/)**
 
 > مهارة برمجية ولغوية لنماذج الذكاء الاصطناعي والمحررات الذكية (Codex، Claude Code، Antigravity IDE، VS Code Agent Harness) لتصحيح النصوص العربية وشرح قواعدها وإعرابها، استناداً إلى **«جامع الدروس العربية»** لمصطفى الغلاييني، و**«النحو الوافي»** لعباس حسن.
-
----
-
-## 🎬 عرض توضيحي (Demo)
-
-| قبل ❌ | بعد ✅ | التوجيه |
-| :--- | :--- | :--- |
-| «إنّ الطالبُ مجتهدٌ» | «إنّ الطالبَ مجتهدٌ» | «إنّ» تنصب الاسم وترفع الخبر |
-| «كان الطالبُ مجتهدٌ» | «كان الطالبُ مجتهدًا» | «كان» ترفع الاسم وتنصب الخبر |
-| «أكرمتُ المجتهداتَ» | «أكرمتُ المجتهداتِ» | جمع المؤنث السالم ينصب بالكسرة |
-| «مررتُ بأحمدٍ» | «مررتُ بأحمدَ» | الممنوع من الصرف يُجر بالفتحة |
-| «لن يكتبون» | «لن يكتبوا» | الأفعال الخمسة تنصب بحذف النون |
-| «جاء قاضي» | «جاء قاضٍ» | المنقوص تُحذف ياؤه في الرفع والجر |
 
 ---
 
@@ -41,7 +35,7 @@
 
 ## 📂 بنية المهارة ومكوناتها
 
-```
+<pre dir="rtl"><code>
 arabic-grammar-skill/
 │
 ├── skills/arabic-grammar-skill/          # المهارة (تركيب Agent Skills القياسي)
@@ -61,7 +55,7 @@ arabic-grammar-skill/
 ├── .agents/skills/arabic-grammar-skill/  # مسار Codex و Antigravity
 │
 └── .claude/skills/arabic-grammar-skill/  # مسار Claude Code
-```
+</code></pre>
 
 ---
 
@@ -153,41 +147,126 @@ Copy-Item -Recurse -Force "path\to\skills\arabic-grammar-skill\*" ".agents\skill
 
 ### خمسة أسئلة قبل التصحيح
 
-| السؤال | لماذا؟ |
-| :--- | :--- |
-| **ما نوع النص؟** | فصيح/عامي/مترجم/أكاديمي/شعري |
-| **ما المطلوب؟** | تصحيح/إعراب/شرح/تدقيق |
-| **ما مستوى القارئ؟** | يحدد عمق الشرح |
-| **تصحيح صامت أم مشروح؟** | يحدد شكل المخرج |
-| **هل النص عاميّ مقصود؟** | لا تُحوّله إلى الفصحى |
+<table dir="rtl">
+<thead>
+<tr>
+<th align="right">السؤال</th>
+<th align="right">لماذا؟</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ما نوع النص؟</strong></td>
+<td>فصيح/عامي/مترجم/أكاديمي/شعري</td>
+</tr>
+<tr>
+<td><strong>ما المطلوب؟</strong></td>
+<td>تصحيح/إعراب/شرح/تدقيق</td>
+</tr>
+<tr>
+<td><strong>ما مستوى القارئ؟</strong></td>
+<td>يحدد عمق الشرح</td>
+</tr>
+<tr>
+<td><strong>تصحيح صامت أم مشروح؟</strong></td>
+<td>يحدد شكل المخرج</td>
+</tr>
+<tr>
+<td><strong>هل النص عاميّ مقصود؟</strong></td>
+<td>لا تُحوّله إلى الفصحى</td>
+</tr>
+</tbody>
+</table>
 
 ### مستويات الخطأ
 
-| المستوى | مثال | العلاج |
-| :--- | :--- | :--- |
-| **الإعراب** | نصب الفاعل | بيّن العامل والعلامة |
-| **البناء** | إعراب الماضي | ذكّر أنه مبني |
-| **المطابقة** | تأنيث الفعل مع مذكر | اضبط المطابقة |
-| **الترتيب** | تقديم معمول على عامله | أعد الترتيب |
-| **الحذف/الزيادة** | حذف المبتدأ | احذف/أضف |
-| **الصرف** | همزة، جمع، تصغير | صحح البنية |
-| **الإملاء/الترقيم** | همزة، فاصلة | صحح الرسم |
+<table dir="rtl">
+<thead>
+<tr>
+<th align="right">المستوى</th>
+<th align="right">مثال</th>
+<th align="right">العلاج</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>الإعراب</strong></td>
+<td>نصب الفاعل</td>
+<td>بيّن العامل والعلامة</td>
+</tr>
+<tr>
+<td><strong>البناء</strong></td>
+<td>إعراب الماضي</td>
+<td>ذكّر أنه مبني</td>
+</tr>
+<tr>
+<td><strong>المطابقة</strong></td>
+<td>تأنيث الفعل مع مذكر</td>
+<td>اضبط المطابقة</td>
+</tr>
+<tr>
+<td><strong>الترتيب</strong></td>
+<td>تقديم معمول على عامله</td>
+<td>أعد الترتيب</td>
+</tr>
+<tr>
+<td><strong>الحذف/الزيادة</strong></td>
+<td>حذف المبتدأ</td>
+<td>احذف/أضف</td>
+</tr>
+<tr>
+<td><strong>الصرف</strong></td>
+<td>همزة، جمع، تصغير</td>
+<td>صحح البنية</td>
+</tr>
+<tr>
+<td><strong>الإملاء/الترقيم</strong></td>
+<td>همزة، فاصلة</td>
+<td>صحح الرسم</td>
+</tr>
+</tbody>
+</table>
 
 ### منهج الإعراب
 
-```
+<pre dir="rtl"><code>
 ① نوع الجملة  ② نوع الكلمة  ③ العامل
 ④ الموقع      ⑤ العلامة      ⑥ السبب
-```
+</code></pre>
 
 ### علامات الإعراب
 
-| الحالة | الأصلية | الفرعية |
-| :--- | :--- | :--- |
-| **رفع** | الضمة | الألف، الواو، ثبوت النون |
-| **نصب** | الفتحة | الألف، الياء، الكسرة، حذف النون |
-| **جر** | الكسرة | الياء، الفتحة |
-| **جزم** | السكون | حذف حرف العلة، حذف النون |
+<table dir="rtl">
+<thead>
+<tr>
+<th align="right">الحالة</th>
+<th align="right">الأصلية</th>
+<th align="right">الفرعية</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>رفع</strong></td>
+<td>الضمة</td>
+<td>الألف، الواو، ثبوت النون</td>
+</tr>
+<tr>
+<td><strong>نصب</strong></td>
+<td>الفتحة</td>
+<td>الألف، الياء، الكسرة، حذف النون</td>
+</tr>
+<tr>
+<td><strong>جر</strong></td>
+<td>الكسرة</td>
+<td>الياء، الفتحة</td>
+</tr>
+<tr>
+<td><strong>جزم</strong></td>
+<td>السكون</td>
+<td>حذف حرف العلة، حذف النون</td>
+</tr>
+</tbody>
+</table>
 
 ---
 
@@ -215,6 +294,24 @@ Copy-Item -Recurse -Force "path\to\skills\arabic-grammar-skill\*" ".agents\skill
 
 ---
 
+## 🤝 المساهمة
+
+نرحب بالمساهمات التي تحسّن المادة أو التحرير أو التوثيق. اقرأ [CONTRIBUTING.md](CONTRIBUTING.md) قبل فتح طلب سحب، والتزم بـ[قواعد السلوك](CODE_OF_CONDUCT.md).
+
+## 🛡️ الأمان
+
+إن وجدت مشكلة أمنية، فلا تفتح قضية عامة؛ راجع [SECURITY.md](SECURITY.md).
+
+## 📄 سجل التغييرات
+
+راجع [CHANGELOG.md](CHANGELOG.md) لمعرفة ما أُضيف في كل إصدار.
+
+## 📬 الدعم
+
+للأسئلة والاقتراحات: [افتح قضية](https://github.com/specailm5/arabic-grammar-skill/issues).
+
+---
+
 ## 📜 الترخيص (License)
 
-هذه المهارة مفتوحة المصدر ومتاحة للاستخدام الشخصي والتجاري والبحثي لدعم اللغة العربية.
+هذه المهارة مفتوحة المصدر تحت رخصة [MIT](LICENSE)، ومتاحة للاستخدام الشخصي والتجاري والبحثي لدعم اللغة العربية.
