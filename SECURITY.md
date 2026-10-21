@@ -2,7 +2,7 @@
 
 ## الإصدارات المدعومة
 
-<table dir="rtl">
+<table dir="rtl" align="right">
 <thead>
 <tr>
 <th align="right">الإصدار</th>
