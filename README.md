@@ -177,6 +177,7 @@ Copy-Item -Recurse -Force "path\to\skills\arabic-grammar-skill\*" ".agents\skill
 </tr>
 </tbody>
 </table>
+<br clear="all">
 
 ### مستويات الخطأ
 
@@ -226,6 +227,7 @@ Copy-Item -Recurse -Force "path\to\skills\arabic-grammar-skill\*" ".agents\skill
 </tr>
 </tbody>
 </table>
+<br clear="all">
 
 ### منهج الإعراب
 
@@ -267,6 +269,7 @@ Copy-Item -Recurse -Force "path\to\skills\arabic-grammar-skill\*" ".agents\skill
 </tr>
 </tbody>
 </table>
+<br clear="all">
 
 ---
 
