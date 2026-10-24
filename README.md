@@ -33,113 +33,61 @@
 
 ---
 
-## 📂 بنية المهارة ومكوناتها
-
-<pre dir="rtl"><code>
-arabic-grammar-skill/
-│
-├── skills/arabic-grammar-skill/          # المهارة (تركيب Agent Skills القياسي)
-│   ├── SKILL.md                          # الدليل الأساسي: التشخيص والتصحيح والإعراب
-│   ├── references/                       # المراجع التفصيلية
-│   │   ├── nahw.md                       # الجملة والمواقع الإعرابية
-│   │   ├── sarf.md                       # الصرف والأوزان والمشتقات
-│   │   ├── common_errors.md              # ٥٠ خطأً شائعاً
-│   │   ├── irab_method.md                # منهج الإعراب
-│   │   └── punctuation.md                # الإملاء والترقيم
-│   └── examples/                         # دراسات الحالة والنماذج
-│       ├── before_after_grammar.md       # نماذج قبل/بعد
-│       └── irab_examples.md              # نماذج إعرابية
-│
-├── docs/                                 # الموقع المرجعي (GitHub Pages)
-│
-├── .agents/skills/arabic-grammar-skill/  # مسار Codex و Antigravity
-│
-└── .claude/skills/arabic-grammar-skill/  # مسار Claude Code
-</code></pre>
-
----
-
-## 🚀 طرق التثبيت والاستخدام (Installation Guide)
-
-تُثبَّتُ المهارةُ إما في مشروعٍ بعينه (**محلياً**)، وإما **عامةً (Global)** لتعمل في كافة المشاريع.
-
----
-
-### أولاً: التثبيت بأمر واحد عبر `npx` (الطريقة الأسرع — موصى به)
+## 🚀 التثبيت
 
 ```bash
 npx skills add specailm5/arabic-grammar-skill -g -y
 ```
 
-ولاختيار بيئات بعينها أو التثبيت داخل مشروع محدد:
+<details>
+<summary>تثبيت يدوي، أو لبيئة واحدة فقط</summary>
+
+**لبيئات محددة:**
 
 ```bash
 npx skills add specailm5/arabic-grammar-skill -a claude-code -a codex
-npx skills add specailm5/arabic-grammar-skill --skill arabic-grammar-skill -g -y
 ```
 
----
-
-### ثانياً: التثبيت العام لبيئة Claude Code و Codex و Antigravity (يدوياً)
-
-#### لنظام Windows (PowerShell):
+**Windows (PowerShell):**
 
 ```powershell
-# مصدر المهارة داخل المستودع
 $src = "skills\arabic-grammar-skill"
 
-# 1. تثبيت لبيئة Claude Code
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\skills\arabic-grammar-skill"
 Copy-Item -Recurse -Force "$src\*" "$env:USERPROFILE\.claude\skills\arabic-grammar-skill\"
 
-# 2. تثبيت لبيئة Codex و Agent Skills العامة
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.agents\skills\arabic-grammar-skill"
 Copy-Item -Recurse -Force "$src\*" "$env:USERPROFILE\.agents\skills\arabic-grammar-skill\"
 
-# 3. تثبيت لبيئة Google Antigravity / Gemini
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.gemini\config\skills\arabic-grammar-skill"
 Copy-Item -Recurse -Force "$src\*" "$env:USERPROFILE\.gemini\config\skills\arabic-grammar-skill\"
 ```
 
-#### لنظام macOS / Linux (Bash):
+**macOS / Linux:**
 
 ```bash
 src=skills/arabic-grammar-skill
 
-# 1. لبيئة Claude Code
 mkdir -p ~/.claude/skills/arabic-grammar-skill
 cp -r "$src/." ~/.claude/skills/arabic-grammar-skill/
 
-# 2. لبيئة Codex و Agent Harness
 mkdir -p ~/.agents/skills/arabic-grammar-skill
 cp -r "$src/." ~/.agents/skills/arabic-grammar-skill/
 
-# 3. لبيئة Antigravity / Gemini
 mkdir -p ~/.gemini/config/skills/arabic-grammar-skill
 cp -r "$src/." ~/.gemini/config/skills/arabic-grammar-skill/
 ```
 
----
-
-### ثالثاً: التثبيت المحلي داخل مشروع محدد (VS Code Workspace Harness)
-
-إذا أردت حصر المهارة داخل مستودع أو مجلد عمل واحد في VS Code:
+**داخل مشروع واحد (VS Code):**
 
 ```powershell
-# داخل مجلد مشروعك الحالي:
 New-Item -ItemType Directory -Force -Path ".agents\skills\arabic-grammar-skill"
 Copy-Item -Recurse -Force "path\to\skills\arabic-grammar-skill\*" ".agents\skills\arabic-grammar-skill\"
 ```
 
-بمجرد فتح المشروع في **VS Code** أو تشغيل `Claude Code` / `Codex`، يكتشفُ الوكيلُ المهارةَ ويقرؤها من تلقاء نفسه عند صياغة أي نص باللغة العربية.
+**بدون بيئة برمجية:** انسخ محتوى [`skills/arabic-grammar-skill/SKILL.md`](skills/arabic-grammar-skill/SKILL.md) إلى التعليمات المخصصة أو System Prompt.
 
----
-
-### رابعاً: الاستخدام اليدوي (Direct System Prompt / Custom Instructions)
-
-إذا كنت تستخدم واجهات الويب (مثل ChatGPT أو Claude أو Gemini) مباشرة دون بيئة برمجية:
-
-* افتح ملف [`skills/arabic-grammar-skill/SKILL.md`](skills/arabic-grammar-skill/SKILL.md) وانسخ محتواه وضعه في خانة **التعليمات المخصصة (Custom Instructions)** أو **System Prompt**.
+</details>
 
 ---
 
@@ -287,27 +235,26 @@ Copy-Item -Recurse -Force "path\to\skills\arabic-grammar-skill\*" ".agents\skill
 
 ---
 
-## ⚠️ حدود المسؤولية
-
-- المهارة **لتصحيح النحو وشرحه**، لا لتدريس النحو كاملاً.
-- لا تُفتى في القراءات، ولا تُحسم المسائل الخلافية بلا مصدر.
-- بعض الأمثلة خلافية؛ يُذكر الخلاف ولا يُجزم.
-- المستخدم مسؤول عن مراجعة النص النهائي.
-- لا تُستخدم المهارة لتغيير معنى النص أو فرض الفصحى على عامي مقصود.
-
----
-
 ## 🤝 المساهمة
 
 نرحب بالمساهمات التي تحسّن المادة أو التحرير أو التوثيق. اقرأ [CONTRIBUTING.md](CONTRIBUTING.md) قبل فتح طلب سحب، والتزم بـ[قواعد السلوك](CODE_OF_CONDUCT.md).
+
+
+---
 
 ## 🛡️ الأمان
 
 إن وجدت مشكلة أمنية، فلا تفتح قضية عامة؛ راجع [SECURITY.md](SECURITY.md).
 
+
+---
+
 ## 📄 سجل التغييرات
 
 راجع [CHANGELOG.md](CHANGELOG.md) لمعرفة ما أُضيف في كل إصدار.
+
+
+---
 
 ## 📬 الدعم
 
@@ -318,3 +265,4 @@ Copy-Item -Recurse -Force "path\to\skills\arabic-grammar-skill\*" ".agents\skill
 ## 📜 الترخيص (License)
 
 هذه المهارة مفتوحة المصدر تحت رخصة [MIT](LICENSE)، ومتاحة للاستخدام الشخصي والتجاري والبحثي لدعم اللغة العربية.
+
