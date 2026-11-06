@@ -10,7 +10,7 @@ metadata:
         «النحو الوافي» (أربعة أجزاء، دار المعارف، القاهرة).
     companion-skills: arabic-writing-skill, arabic-balagha-skill, arabic-editing-skill
     language: العربية الفصحى
-    version: 1.2.0
+    version: 1.3.0
     github-path: .agents/skills/arabic-grammar-skill
     github-ref: refs/heads/master
     github-repo: https://github.com/specailm5/arabic-grammar-skill
@@ -23,7 +23,7 @@ metadata:
 
 > **تنبيه:** هذه المهارة **لتصحيح النص وشرح قواعده وإعرابه**، لا لتدريس النحو كاملاً. ولا تُفتى في القراءات، ولا تُحسم المسائل الخلافية بلا مصدر. والقاعدة: **لا تصحيح بلا سبب، ولا إعراب بلا منهج، ولا حكم بلا كتاب.**
 
-> **عقد التشغيل (v1.2):** لا تصحيح قاطع بلا `source_id` من `references/sources.yaml`. والتصحيح القاطع يحتاج طبقة ١ أو ٢. وما لا مصدر له يبقى اقتراحاً في `unresolved`. وراجع `references/source_policy.md` قبل أي حكم، و`references/transitivity.md` و`references/particle_traps.md` قبل تصحيح التعدية أو الأدوات، و`references/regression_cases.md` لقياس الاستدعاء والدقة. وفي مهام التصحيح اسأل: «تقرير بالأخطاء المصححة أم نص مصحح فقط؟»؛ ولا تقرير افتراضي في المهام الإبداعية.
+> **عقد التشغيل (v1.3):** لا تصحيح قاطع بلا `source_id` من `references/sources.yaml`. والتصحيح القاطع يحتاج طبقة ١ أو ٢. وما لا مصدر له يبقى اقتراحاً في `unresolved`. وراجع `references/source_policy.md` قبل أي حكم، و`references/transitivity.md` و`references/particle_traps.md` قبل تصحيح التعدية أو الأدوات، و`references/regression_cases.md` لقياس الاستدعاء والدقة. والقياس الآلي في `qalam-eval` (١٠٠ حالة، مشغّل، وخط أساس). وفي مهام التصحيح اسأل: «تقرير بالأخطاء المصححة أم نص مصحح فقط؟»؛ ولا تقرير افتراضي في المهام الإبداعية.
 
 ---
 
